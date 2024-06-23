@@ -58,11 +58,14 @@ resource "google_cloudbuild_trigger" "pr-branch-trigger" {
     }
   }
 
-  filename       = "cloudbuild_pull.yaml"
-  included_files = ["*"]
+  filename       = "scripts/apply/cloudbuild_pull.yaml"
+  included_files = ["**"]
+
+  service_account = google_service_account.cloud-build-access.id
 
   depends_on = [google_cloudbuildv2_repository.github]
 }
+
 
 # Create Cloud Build trigger for main requests 
 resource "google_cloudbuild_trigger" "main-branch-trigger" {
@@ -79,7 +82,13 @@ resource "google_cloudbuild_trigger" "main-branch-trigger" {
   }
 
   filename       = "scripts/apply/cloudbuild_apply.yaml"
-  included_files = ["*"]
+  included_files = ["**"]
+
+  provisioner "local-exec" {
+    command = "sleep 5"
+  }
+
+  service_account = google_service_account.cloud-build-access.id
 
   depends_on = [google_cloudbuildv2_repository.github]
 }
