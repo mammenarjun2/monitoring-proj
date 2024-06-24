@@ -58,7 +58,7 @@ resource "google_cloudbuild_trigger" "pr-branch-trigger" {
     }
   }
 
-  filename       = "scripts/apply/cloudbuild_pull.yaml"
+  filename       = "scripts/pull/cloudbuild_pull.yaml"
   included_files = ["**"]
 
   service_account = google_service_account.cloud-build-access.id

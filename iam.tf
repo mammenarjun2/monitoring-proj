@@ -30,7 +30,6 @@ resource "google_service_account_iam_member" "cloud_build_sa_permissions" {
 
 # Cloud Build project service account for deploying infra
 
-
 resource "google_project_iam_member" "project_access_sa_permissions" {
   for_each = toset(local.cloud_build_sa_project_roles)
 
