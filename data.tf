@@ -11,3 +11,4 @@ data "google_secret_manager_secret_version_access" "github-token-secret-version"
   project = var.project
   secret  = data.google_secret_manager_secret.github-token-secret.id
 }
+
