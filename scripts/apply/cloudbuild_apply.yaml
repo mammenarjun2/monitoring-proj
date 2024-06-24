@@ -27,5 +27,5 @@ steps:
     waitFor: ['tf-plan']
 
 options:
-  logging: CLOUD_LOGGING_AND_LOCAL
+  logging: LEGACY
 
