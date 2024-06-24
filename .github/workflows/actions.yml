@@ -1,0 +1,33 @@
+name: Linter Workflow
+run-name: ${{ github.actor }} is learning GitHub Actions
+
+on: [push]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
+      # To report GitHub Actions status checks
+      statuses: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          # super-linter needs the full git history to get the
+          # list of files that changed across commits
+          fetch-depth: 0
+
+      - name: Run Super-Linter
+        uses: github/super-linter@v6.6.0
+        env:
+          # To report GitHub Actions status checks
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Optional: Set to 'true' to allow super-linter to exit with code 0 even if errors were detected
+          # LINTERS_VALIDATION: 'true'
+          # Optional: Specify the language-specific linters to run, or leave empty for default
+          # LINTER_RULES_PATH: ''
+          # Optional: Specify any additional configuration needed
+          # RUN_LOCAL: 'false'
