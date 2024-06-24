@@ -1,8 +1,5 @@
 name: Linter Workflow
-run-name: ${{ github.actor }} is learning GitHub Actions
-
 on: [push]
-
 jobs:
   lint:
     runs-on: ubuntu-latest
