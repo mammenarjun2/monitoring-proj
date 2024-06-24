@@ -16,6 +16,5 @@ steps:
     env:
       - 'GOOGLE_CLOUD_PROJECT=$PROJECT_ID'
     waitFor: ['tf-init']
-
 options:
-  logging: CLOUD_LOGGING_ONLY
+  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
