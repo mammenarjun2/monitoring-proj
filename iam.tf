@@ -9,6 +9,10 @@ locals {
   cloud_build_sa_project_roles = [
     "roles/cloudbuild.builds.viewer",
     "roles/cloudbuild.connectionViewer",
+    "roles/logging.logWriter",
+    "roles/viewer",
+    "roles/editor",
+    "roles/secretmanager.secretAccessor",
   ]
 }
 
