@@ -14,6 +14,7 @@ locals {
     "roles/editor",
     "roles/secretmanager.secretAccessor",
     "roles/logging.admin",
+    "roles/storage.admin",
 
   ]
 }
