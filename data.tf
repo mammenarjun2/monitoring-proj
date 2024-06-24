@@ -12,7 +12,3 @@ data "google_secret_manager_secret_version_access" "github-token-secret-version"
   secret  = data.google_secret_manager_secret.github-token-secret.id
 }
 
-data "google_pubsub_topic" "data-metrics" {
-  name = "data-metrics"
-
-}
