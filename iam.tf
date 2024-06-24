@@ -13,6 +13,8 @@ locals {
     "roles/viewer",
     "roles/editor",
     "roles/secretmanager.secretAccessor",
+    "roles/logging.admin",
+
   ]
 }
 
