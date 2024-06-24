@@ -27,5 +27,5 @@ steps:
     waitFor: ['tf-plan']
 
 options:
-  logging: GCS_ONLY
+  logging: CLOUD_LOGGING_ONLY
 
