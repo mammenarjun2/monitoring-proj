@@ -2,10 +2,10 @@ locals {
   cloud_build_impersonate_roles = [
     "roles/iam.serviceAccountTokenCreator",
     "roles/iam.serviceAccountUser",
-   
+
   ]
 
- # Add permissons below depending on what is required to be deployed for the project 
+  # Add permissons below depending on what is required to be deployed for the project 
 
   cloud_build_sa_project_roles = [
     "roles/cloudbuild.builds.viewer",
@@ -16,6 +16,7 @@ locals {
     "roles/secretmanager.secretAccessor",
     "roles/logging.admin",
     "roles/storage.admin",
+    "roles/artifactregistry.writer",
 
   ]
 }
