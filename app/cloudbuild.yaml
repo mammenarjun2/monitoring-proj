@@ -4,7 +4,9 @@ steps:
     - 'build'
     - '-t'
     - 'europe-west1-docker.pkg.dev/$PROJECT_ID/app-repo/flask-loop-app'
-    - '.'
+    - './app'  
+    - '-f'
+    - './app/Dockerfile' 
 images:
 - 'europe-west1-docker.pkg.dev/$PROJECT_ID/app-repo/flask-loop-app'
 options:
