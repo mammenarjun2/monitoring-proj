@@ -1,5 +1,6 @@
 substitutions:
   _LOCATION: 'europe-west1'
+  _PROJECT_ID: 'monitoringproj-427319'
   _REPOSITORY: 'app-repo'
   _IMAGE: 'your-image'
 
