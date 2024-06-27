@@ -92,3 +92,28 @@ resource "google_cloudbuild_trigger" "main-branch-trigger" {
 
   depends_on = [google_cloudbuildv2_repository.github]
 }
+
+
+# Create Cloud Build trigger for app image build requests 
+resource "google_cloudbuild_trigger" "app-image-pull-trigger" {
+  location    = var.region
+  project     = var.project
+  name        = "pull-branch"
+  description = "pull requests"
+
+  repository_event_config {
+    repository = google_cloudbuildv2_repository.github.id
+    push {
+      branch = ".*"
+    }
+  }
+
+  filename       = "../app/cloudbuild.yaml"
+  included_files = ["**"]
+
+
+
+  service_account = google_service_account.cloud-build-access.id
+
+  depends_on = [google_cloudbuildv2_repository.github]
+}
