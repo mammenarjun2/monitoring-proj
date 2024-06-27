@@ -46,9 +46,9 @@ resource "google_secret_manager_secret_iam_policy" "cloudbuild-github-connection
 
 # Create Cloud Build trigger for pull requests
 resource "google_cloudbuild_trigger" "pr-branch-trigger" {
-  location = var.region
-  project  = var.project
-  name     = "pull-branch"
+  location    = var.region
+  project     = var.project
+  name        = "pull-branch"
   description = "pull requests"
 
   repository_event_config {
@@ -69,10 +69,10 @@ resource "google_cloudbuild_trigger" "pr-branch-trigger" {
 
 # Create Cloud Build trigger for main requests 
 resource "google_cloudbuild_trigger" "main-branch-trigger" {
-  location = var.region
-  project  = var.project
-  name     = "main-branch"
-   description = "merged requests"
+  location    = var.region
+  project     = var.project
+  name        = "main-branch"
+  description = "merged requests"
 
   repository_event_config {
     repository = google_cloudbuildv2_repository.github.id
