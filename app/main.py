@@ -6,4 +6,4 @@ app = Flask(__name__)
 @app.route("/")
 def hello_world():
     secret="erwefrwef"
-    return "loop test! {secret} test"
+    return "loop test! {secret}"
