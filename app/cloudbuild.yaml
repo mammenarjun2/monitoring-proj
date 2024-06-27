@@ -1,11 +1,9 @@
-substitutions:
-  _LOCATION: 'europe-west1'
-  _PROJECT_ID: 'monitoringproj-427319'
-  _REPOSITORY: 'app-repo'
-  _IMAGE: 'your-image'
-
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '-t', '${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}', '.' ]
+  args:
+    - 'build'
+    - '-t'
+    - 'europe-west1-docker.pkg.dev/$PROJECT_ID/app-repo/flask-loop-app'
+    - '.'
 images:
-- '${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}'
+- 'europe-west1-docker.pkg.dev/$PROJECT_ID/app-repo/flask-loop-app'
