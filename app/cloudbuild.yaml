@@ -7,3 +7,5 @@ steps:
     - '.'
 images:
 - 'europe-west1-docker.pkg.dev/$PROJECT_ID/app-repo/flask-loop-app'
+options:
+  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
