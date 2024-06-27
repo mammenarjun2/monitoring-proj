@@ -98,7 +98,7 @@ resource "google_cloudbuild_trigger" "main-branch-trigger" {
 resource "google_cloudbuild_trigger" "app-image-pull-trigger" {
   location    = var.region
   project     = var.project
-  name        = "pull-branch"
+  name        = "app-pull-branch"
   description = "pull requests"
 
   repository_event_config {
