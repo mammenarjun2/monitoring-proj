@@ -109,7 +109,7 @@ resource "google_cloudbuild_trigger" "app-image-pull-trigger" {
   }
 
   filename       = "app/cloudbuild.yaml"
-  included_files = ["**"]
+  included_files = ["app/**"]
 
 
 

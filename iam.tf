@@ -17,6 +17,7 @@ locals {
     "roles/logging.admin",
     "roles/storage.admin",
     "roles/artifactregistry.writer",
+    "roles/iam.securityAdmin",
 
   ]
 }
