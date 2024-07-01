@@ -69,6 +69,6 @@ resource "google_compute_instance_group_manager" "instance_group_manager" {
   zone               = "europe-west1-a"
   target_size        = 2
   version{
-  instance_template  = google_compute_instance_template.instance_template.id
+  instance_template  = google_compute_instance_template.default.id
   }
 }
