@@ -16,7 +16,6 @@ resource "google_compute_instance_template" "default" {
   instance_description = "description assigned to instances"
   machine_type         = "e2-medium"
   can_ip_forward       = false
-
   scheduling {
     automatic_restart   = true
   }
@@ -62,4 +61,12 @@ resource "google_compute_disk" "foobar" {
   size  = 10
   type  = "pd-ssd"
   zone  = var.region
+}
+
+resource "google_compute_instance_group_manager" "instance_group_manager" {
+  name               = "instance-group-manager"
+  instance_template  = google_compute_instance_template.instance_template.id
+  base_instance_name = "instance-group-manager"
+  zone               = "europe-west1-a"
+  target_size        = "2"
 }
