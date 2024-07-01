@@ -65,8 +65,10 @@ resource "google_compute_disk" "foobar" {
 
 resource "google_compute_instance_group_manager" "instance_group_manager" {
   name               = "instance-group-manager"
-  instance_template  = google_compute_instance_template.instance_template.id
   base_instance_name = "instance-group-manager"
   zone               = "europe-west1-a"
-  target_size        = "2"
+  target_size        = 2
+  version{
+  instance_template  = google_compute_instance_template.instance_template.id
+  }
 }
