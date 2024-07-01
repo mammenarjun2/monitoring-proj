@@ -5,7 +5,7 @@ resource "google_compute_backend_service" "backend_service" {
   health_checks = [google_compute_http_health_check.ldb_check.id]
   
    backend {
-    group = google_compute_instance_group.instance_group_manager.self_link
+    group = google_compute_instance_group.instance_group_manager.id
   }
 
 }
