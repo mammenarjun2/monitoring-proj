@@ -1,4 +1,4 @@
-resource "google_compute_backened_service" {
+resource "google_compute_backened_service" "backend_service" {
   name = "ldb-4"
   protocol = "HTTP"
   load_balancing_scheme = "EXTERNAL"
