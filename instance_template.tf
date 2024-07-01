@@ -1,5 +1,5 @@
 resource "google_service_account" "default" {
-  account_id   = "service-account-id"
+  account_id   = "ldb7-vms"
   display_name = "Service Account"
 }
 
@@ -44,7 +44,7 @@ resource "google_compute_instance_template" "default" {
   }
 
   service_account {
-    # Google recommends custom service accounts that have cloud-platform scope and permissions granted via IAM Roles.
+    
     email  = google_service_account.default.email
     scopes = ["cloud-platform"]
   }
