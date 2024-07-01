@@ -60,13 +60,13 @@ resource "google_compute_disk" "foobar" {
   image = data.google_compute_image.my_image.self_link
   size  = 10
   type  = "pd-ssd"
-  zone  = "europe-west1-a"
+  zone  = "europe-west1-c"
 }
 
 resource "google_compute_instance_group_manager" "instance_group_manager" {
   name               = "instance-group-manager"
   base_instance_name = "instance-group-manager"
-  zone               = "europe-west1-b"
+  zone               = "europe-west1-c"
   target_size        = 2
   version{
   instance_template  = google_compute_instance_template.default.id
