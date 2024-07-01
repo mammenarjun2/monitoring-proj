@@ -37,6 +37,8 @@ resource "google_compute_instance_template" "default" {
 
   network_interface {
     network = "default"
+    access_config {
+    }
   }
 
   metadata = {
