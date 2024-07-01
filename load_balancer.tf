@@ -3,6 +3,11 @@ resource "google_compute_backend_service" "backend_service" {
   protocol = "HTTP"
   load_balancing_scheme = "EXTERNAL"
   health_checks = [google_compute_http_health_check.ldb_check.id]
+  
+   backend {
+    group = google_compute_instance_group.instance_group_manager.self_link
+  }
+
 }
 resource "google_compute_http_health_check" "ldb_check" {
   name               = "vm-liveness-check"
