@@ -30,7 +30,7 @@ resource "google_compute_instance_template" "default" {
   // Use an existing disk resource
   disk {
     // Instance Templates reference disks by name, not self link
-    source      = google_compute_disk.foobar.name
+    source_image = data.google_compute_image.my_image.self_link
     auto_delete = false
     boot        = false
   }
