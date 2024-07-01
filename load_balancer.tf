@@ -30,4 +30,5 @@ resource "google_compute_global_forwarding_rule" "http_forwarding_rule" {
 
 resource "google_compute_address" "global_address" {
   name = "global-address"
+  region = "europe-west1"
 }
