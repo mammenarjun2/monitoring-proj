@@ -5,7 +5,7 @@ resource "google_compute_backend_service" "backend_service" {
   health_checks = [google_compute_http_health_check.ldb_check.id]
 }
 resource "google_compute_http_health_check" "ldb_check" {
-  name               = "vm_liveness_check"
+  name               = "vm-liveness-check"
   request_path       = "/test"
   check_interval_sec = 1
   timeout_sec        = 1

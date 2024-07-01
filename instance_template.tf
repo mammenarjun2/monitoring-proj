@@ -60,7 +60,7 @@ resource "google_compute_disk" "foobar" {
   image = data.google_compute_image.my_image.self_link
   size  = 10
   type  = "pd-ssd"
-  zone  = var.region
+  zone  = "europe-west1-a"
 }
 
 resource "google_compute_instance_group_manager" "instance_group_manager" {
