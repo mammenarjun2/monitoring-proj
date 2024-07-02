@@ -39,7 +39,7 @@ resource "google_compute_instance_template" "default" {
     network = "default"
   }
 
-  metadata_startup_script = << EOF
+  metadata_startup_script = <<EOF
     #!/bin/bash
     sudo apt update -y
     sudo apt install -y nginx
@@ -66,6 +66,7 @@ resource "google_compute_disk" "foobar" {
   zone  = "europe-west1-c"
 }
 
+
 resource "google_compute_instance_group_manager" "instance_group_manager" {
   name               = "instance-group-manager"
   base_instance_name = "instance-group-manager"
@@ -77,9 +78,10 @@ resource "google_compute_instance_group_manager" "instance_group_manager" {
   }
 }
 
+
 resource "google_compute_instance_group_manager" "instance_group_manager2" {
   name               = "instance-group-manager2"
-  base_instance_name = "instance-group-manager2"
+  base_instance_name = "instance-group-manager"
   zone               = "europe-west1-c"
   target_size        = 1
 
