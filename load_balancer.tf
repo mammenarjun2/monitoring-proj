@@ -1,4 +1,4 @@
-/*
+
 data "google_compute_instance_group" "instance_group_manager" {
     name = "instance-group-manager"
     zone = "europe-west1-c"
@@ -58,4 +58,3 @@ resource "google_compute_address" "global_address" {
   name = "global-address"
   region = "europe-west1"
 }
-*/
