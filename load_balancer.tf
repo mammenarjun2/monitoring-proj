@@ -1,3 +1,4 @@
+/*
 data "google_compute_instance_group" "instance_group_manager" {
     name = "instance-group-manager"
     zone = "europe-west1-c"
@@ -27,10 +28,6 @@ resource "google_compute_backend_service" "backend_service" {
     capacity_scaler   = 0.5
     max_utilization   = 0.5
   }
-  depends_on = [
-    google_compute_instance_group_manager.instance_group_manager,
-    google_compute_instance_group_manager.instance_group_manager2,
-  ]
 }
 
 resource "google_compute_http_health_check" "ldb_check" {
@@ -61,3 +58,4 @@ resource "google_compute_address" "global_address" {
   name = "global-address"
   region = "europe-west1"
 }
+*/
