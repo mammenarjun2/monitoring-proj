@@ -44,7 +44,7 @@ resource "google_compute_instance_template" "default" {
     sudo apt update -y
     sudo apt install -y nginx
     sudo systemctl restart nginx
-    EOF
+  EOF
 
   service_account {
     
@@ -71,8 +71,9 @@ resource "google_compute_instance_group_manager" "instance_group_manager" {
   base_instance_name = "instance-group-manager"
   zone               = "europe-west1-c"
   target_size        = 1
-  version{
-  instance_template  = google_compute_instance_template.default.id
+
+  version {
+    instance_template = google_compute_instance_template.default.id
   }
 }
 
@@ -81,7 +82,8 @@ resource "google_compute_instance_group_manager" "instance_group_manager2" {
   base_instance_name = "instance-group-manager2"
   zone               = "europe-west1-c"
   target_size        = 1
-  version{
-  instance_template  = google_compute_instance_template.default.id
+
+  version {
+    instance_template = google_compute_instance_template.default.id
   }
 }
