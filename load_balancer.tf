@@ -15,14 +15,14 @@ resource "google_compute_backend_service" "backend_service" {
   health_checks = [google_compute_http_health_check.ldb_check.id]
   
    backend {
-    group = data.google_compute_instance_group.instance_group_manager.id,
+    group = data.google_compute_instance_group.instance_group_manager.id
     balancing_mode = "UTILIZATION"
     capacity_scaler = 0.5
     max_utilization = 0.5
   },
 
    backend {
-    group = data.google_compute_instance_group.instance_group_manager2.id,
+    group = data.google_compute_instance_group.instance_group_manager2.id
     balancing_mode = "UTILIZATION"
     capacity_scaler = 0.5
     max_utilization = 0.5
