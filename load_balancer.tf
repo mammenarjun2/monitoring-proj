@@ -1,4 +1,5 @@
 
+/*
 data "google_compute_instance_group" "instance_group_manager" {
     name = "instance-group-manager"
     zone = "europe-west1-c"
@@ -8,6 +9,7 @@ data "google_compute_instance_group" "instance_group_manager2" {
     name = "instance-group-manager2"
     zone = "europe-west1-c"
 }
+*/
 
 resource "google_compute_backend_service" "backend_service" {
   name                 = "ldb-4"
